@@ -8,7 +8,7 @@ import { Players } from '../interfaces/players';
 export class ApiServService {
   private url = 'https://www.balldontlie.io/api/v1/players';
   constructor(private http: HttpClient) {}
-  getPlayer(): Observable<Players> {
-    return this.http.get<Players>(this.url);
+  getPlayer() {
+    return this.http.get(this.url);
   }
 }
