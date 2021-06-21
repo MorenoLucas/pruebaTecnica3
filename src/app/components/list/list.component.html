@@ -1,1 +1,38 @@
-<p *ngFor="let player of play">{{ player.first_name }}</p>
+<div class="p-8 bg-white dark:bg-gray-800 rounded-lg shadow">
+  <p class="text-center text-3xl font-bold text-gray-800 dark:text-white">
+    Players of NBA
+  </p>
+  <p
+    class="
+      text-center
+      mb-12
+      text-xl
+      font-normal
+      text-gray-500
+      dark:text-gray-300
+    "
+  ></p>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+    <div class="p-4" *ngFor="let player of listPlayers">
+      <div class="flex-col flex justify-center items-center">
+        <div class="flex-shrink-0">
+          <a href="#" class="block relative">
+            <img
+              alt="profil"
+              src="../../../assets/logo.png"
+              class="mx-auto object-cover rounded-full h-20 w-20"
+            />
+          </a>
+        </div>
+        <div class="mt-2 text-center flex flex-col">
+          <span class="text-gray-600 dark:text-white text-lg font-medium">
+            {{ player.first_name }} {{ player.last_name }}
+          </span>
+          <span class="text-gray-400 text-xs">
+            {{ player.team.abbreviation }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
