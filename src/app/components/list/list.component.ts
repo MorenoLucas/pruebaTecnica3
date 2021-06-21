@@ -20,6 +20,7 @@ export class ListComponent implements OnInit {
   }
 
   goPlayer(id) {
+    this.apiServ.setPlayerDetails(id);
     this.router.navigate(['details', id]);
   }
 }

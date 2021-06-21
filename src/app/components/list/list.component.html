@@ -16,7 +16,7 @@
     <div class="p-4" *ngFor="let player of listPlayers">
       <div class="flex-col flex justify-center items-center">
         <div class="flex-shrink-0">
-          <a href="#" class="block relative">
+          <a (click)="goPlayer(player.id)" class="block relative">
             <img
               alt="profil"
               src="../../../assets/logo.png"
