@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Players } from '../interfaces/players';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiServService {
-
-  constructor() { }
+  private url = 'https://www.balldontlie.io/api/v1/players';
+  constructor(private http: HttpClient) {}
+  getPlayer(): Observable<Players> {
+    return this.http.get<Players>(this.url);
+  }
 }
