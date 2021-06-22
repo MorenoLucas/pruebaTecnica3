@@ -8,10 +8,29 @@ import { ApiServService } from 'src/app/services/api-serv.service';
   styleUrls: ['./details.component.css'],
 })
 export class DetailsComponent implements OnInit {
-  details: Players;
+  details;
   constructor(private apiServ: ApiServService) {
+    this.details = {
+      id: 0,
+      first_name: '',
+      last_name: '',
+      position: '',
+      height_feet: 0,
+      height_inches: 0,
+      weight_pounds: 0,
+      team: {
+        id: 0,
+        abbreviation: '',
+        city: '',
+        conference: '',
+        division: '',
+        full_name: '',
+        name: '',
+      },
+    };
     this.apiServ.getPlayerDetails().subscribe((data: any) => {
       this.details = data;
+      console.log(this.details);
     });
   }
 
